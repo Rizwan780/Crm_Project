@@ -1,0 +1,11 @@
+1.explain the concept of url in java networking
+2.what are the conponents of url and how they relate to java networking?
+
+3.how you can read the header data of http protocol??
+
+4.explain the process of establishing the network connection using java socket : what are the key steps involving an establishing a connection 
+and how can you ensure that the connection is secure?
+
+5.explain how java support SSL/TLS communication .what are the key clauses and methods that are used for SSL/TLS communication?
+
+6.how can as InetAddress and URL Claases be used in conjuction with http to communicate with remote server?

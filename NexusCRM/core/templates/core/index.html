@@ -1,0 +1,43 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Nexus CRM{% endblock %}
+
+{% block content %}
+<div class="font-sans">
+  <div class="">
+    <div class="flex items-center justify-center mb-8">
+      <input type="text" placeholder="Search" class="w-64 px-4 py-2 border border-gray-100 rounded-l-md focus:outline-none">
+      <button class="px-4 py-2 bg-red-500 text-white rounded-r-md hover:bg-gray-100">Search</button>
+    </div>
+
+    <div class="mb-8">
+      <h2 class="text-2xl font-bold mb-4">Recent Clients</h2>
+      {% for client in clients %}
+      <div class="mb-2 client">
+         <h3 class="font-semibold">{{ client.name }}</h3>
+
+         <a href="{% url 'clients:detail' client.pk %}">Details</a>
+      </div>
+    </div>
+    {% endfor %}
+
+    <div class="mb-8">
+      <h2 class="text-2xl font-bold mb-4">Upcoming Tasks</h2>
+      {% for lead in leads %} 
+           <div class="mb-2 lead">
+              <h3 class="font-semibold">{{ lead.name }}</h3>
+
+              <p class="text-xs">Status: {{lead.get_status_display }}</p>
+              <p class="text-xs">Priority: {{lead.get_priority_display }}</p>
+
+              <a href="{% url 'leads:detail' lead.pk %}">Details</a>
+           </div>
+        {% endfor %}
+    </div>
+
+    <button class="px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600">Create New Task</button>
+  </div>
+</div>
+
+
+{% endblock %}
